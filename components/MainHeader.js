@@ -5,7 +5,7 @@ import Colors from "../constants/Colors";
 
 function MainHeader(props) {
   return (
-    <View style={styles.screen}>
+    <View>
       <Text style={styles.textContainer}>{props.title}</Text>
     </View>
   );
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: Colors.primary,
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 10,
     padding: 30,
   },

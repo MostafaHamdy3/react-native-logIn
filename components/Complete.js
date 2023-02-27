@@ -1,14 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import Colors from "../constants/Colors";
 
 function Complete(props) {
   return (
     <View style={styles.btn_Container}>
-      <Text style={styles.btn_log} onPress={() => {}}>
-        {props.title}
-      </Text>
+      <TouchableOpacity style={styles.btn_log} onPress={props.onPress}>
+        <Text style={styles.textColor}>{props.title}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingHorizontal: 90,
     borderRadius: 20,
+  },
+
+  textColor: {
+    color: Colors.accent,
   },
 });
 

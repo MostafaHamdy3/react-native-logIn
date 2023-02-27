@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import Complete from "../components/Complete";
 
 import Colors from "../constants/Colors";
 import LogIn from "./LogIn";
@@ -13,13 +14,19 @@ function Welcome(props) {
     <View style={styles.screen}>
       <Text style={styles.mainText}>Hello to your new app</Text>
       <View style={styles.btn_Container}>
-        <Text style={styles.btn_log} onPress={() => setIsLoggedIn(true)}>
-          Log In
-        </Text>
+        <TouchableOpacity
+          style={styles.btn_log}
+          onPress={() => setIsLoggedIn(true)}
+        >
+          <Text style={styles.btnText}>Log In</Text>
+        </TouchableOpacity>
         <LogIn visible={isLoggedIn} />
-        <Text style={styles.btn_sign} onPress={() => setIsSignedUp(true)}>
-          Sign Up
-        </Text>
+        <TouchableOpacity
+          style={styles.btn_sign}
+          onPress={() => setIsSignedUp(true)}
+        >
+          <Text style={styles.textBtn}>Sign Up</Text>
+        </TouchableOpacity>
         <SignUp visible={isSignedUp} />
       </View>
     </View>
@@ -62,6 +69,14 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary,
     borderWidth: 1,
     borderRadius: 20,
+  },
+
+  btnText: {
+    color: Colors.accent,
+  },
+
+  textBtn: {
+    color: Colors.primary,
   },
 });
 
