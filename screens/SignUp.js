@@ -7,12 +7,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
 import MainHeader from "../components/MainHeader";
 import Complete from "../components/Complete";
 import Welcome from "./Welcome";
+import HeaderIcon from "../components/HeaderIcon";
 
 function SignUp(props) {
   const [isSigned, setIsSigned] = useState(false);
@@ -28,13 +28,7 @@ function SignUp(props) {
 
   let outputSign = (
     <View style={styles.screen}>
-      <AntDesign
-        name="caretleft"
-        size={24}
-        color={Colors.primary}
-        style={styles.icon}
-        onPress={backHandler}
-      />
+      <HeaderIcon onPress={backHandler} />
       <MainHeader title="Create new account" />
       <View style={styles.inputContainer}>
         <TextInput style={styles.btn_Container} placeholder="Full Name" />
@@ -60,11 +54,6 @@ function SignUp(props) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-  },
-
-  icon: {
-    paddingLeft: 30,
-    marginTop: 30,
   },
 
   inputContainer: {

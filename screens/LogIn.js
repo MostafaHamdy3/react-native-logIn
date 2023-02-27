@@ -3,21 +3,18 @@ import {
   StyleSheet,
   TextInput,
   View,
-  Text,
   Modal,
   TouchableWithoutFeedback,
   Keyboard,
-  TouchableOpacity,
-  Button,
 } from "react-native";
 
 import * as Svg from "react-native-svg";
-import { AntDesign } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
 import MainHeader from "../components/MainHeader";
 import Complete from "../components/Complete";
 import Welcome from "./Welcome";
+import HeaderIcon from "../components/HeaderIcon";
 
 function LogIn(props) {
   const [isBacked, setIsBacked] = useState(false);
@@ -26,16 +23,13 @@ function LogIn(props) {
     setIsBacked(true);
   };
 
+  // How can I make icon file components that It contains the icon, it style, state and function but how can I get is Backed here?
+  // How can I solve the worning problem by chang visible to onPress function by change text to touchableOpacity?
+
   let outputScreen;
   outputScreen = (
     <View style={styles.screen}>
-      <AntDesign
-        name="caretleft"
-        size={24}
-        color={Colors.primary}
-        style={styles.icon}
-        onPress={backHandler}
-      />
+      <HeaderIcon onPress={backHandler} />
       <MainHeader title="Sign In" />
       <View style={styles.container}>
         <TextInput
@@ -66,11 +60,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     gap: 20,
-  },
-
-  icon: {
-    paddingLeft: 30,
-    marginTop: 30,
   },
 
   inputContainer: {
